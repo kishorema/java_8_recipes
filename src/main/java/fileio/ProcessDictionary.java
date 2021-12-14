@@ -79,7 +79,7 @@ public class ProcessDictionary {
     public void printSortedMapOfWordsUsingBufferedReader() {
         System.out.println("\nNumber of words of each length (desc order):");
         try (Stream<String> words =
-                     new BufferedReader(new FileReader("/usr/share/dict/words")).lines()) {
+                     new BufferedReader(new FileReader("src/main/resources/dict/words")).lines()) {
             Map<Integer, Long> map = words.filter(s -> s.length() > 20)
                     .collect(groupingBy(String::length, counting()));
 
